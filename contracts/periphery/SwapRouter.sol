@@ -42,11 +42,12 @@ contract SwapRouter is
     {}
 
     /// @dev Returns the pool for the given token pair and fee. The pool contract may or may not exist.
+
     function getPool(
         address tokenA,
         address tokenB,
         uint24 fee
-    ) private view returns (IUniswapV3Pool) {
+    ) public view returns (IUniswapV3Pool) {
         return
             IUniswapV3Pool(
                 PoolAddress.computeAddress(
