@@ -4,6 +4,7 @@ describe('Uniswap',()=>{
     let admin,user1;
     let factory,poolAddress,router;
     let wrappedEther,tokenA,tokenB;
+    
 
     beforeEach(async()=>{
         [admin,user1]=await ethers.getSigners()
@@ -29,7 +30,6 @@ describe('Uniswap',()=>{
 
         await factory.createPool(tokenA.address,tokenB.address, 500)
         poolAddress=await router.getPool(tokenA.address,tokenB.address, 500)
-        
     })
 
     describe('Factory Contract',()=>{
@@ -42,10 +42,12 @@ describe('Uniswap',()=>{
         })
     })
 
+
     describe('Router Contract',()=>{
         it('constructor correctly initialized factory', async () => {
             expect(await router.factory()).to.be.equal(factory.address)
         })
-    })  
+    }) 
+    
 })
 
