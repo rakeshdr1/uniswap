@@ -16,9 +16,9 @@ module.exports = {
       }
     }},
     networks:{
-      rinkeby:{
-        url:InfuraUrl,
-        accounts:[`0x${privateKey}`]
-      }
+      // rinkeby:{
+      //   url:InfuraUrl,
+      //   accounts:[`0x${privateKey}`]
+      // }
     }
 };
