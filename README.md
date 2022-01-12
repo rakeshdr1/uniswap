@@ -1,6 +1,6 @@
-# # UniswapV3 Hardhat Project
+# UniswapV3 Hardhat Project
 
-# Uniswap Contracts Flow
+## Uniswap Contracts Flow
 
 ![This is an image](/assets/images/uniswap.png)
 
@@ -15,7 +15,7 @@ The Core consists of Single Factory, Pool deployer and Pools created for token p
 
 ```
 
-- Factory Contract \* : Factory defines the logic for generating pools
+- Factory Contract : Factory defines the logic for generating pools
 
 ```
     createPool(tokenA,tokenB,txFee)
@@ -29,11 +29,11 @@ Includes  Nonfungible PositionManager and SwapRouter
 
 ```
 
-- Nonfungible PositionManager \* : In charge of creation of transaction pool and addition/removal of liquidity.
+- Nonfungible PositionManager : In charge of creation of transaction pool and addition/removal of liquidity.
 
-addLiquidity : implements the liquidity addition.
-\_updatePosition : updates the corresponding boundary Tick info for Position.
-\_modifyPosition : implements the adjustment to both positive and negative liquidity.
+1. addLiquidity : implements the liquidity addition.
+2. \_updatePosition : updates the corresponding boundary Tick info for Position.
+3. \_modifyPosition : implements the adjustment to both positive and negative liquidity.
 
 ```
 nfgPositionManger.mint({
@@ -52,10 +52,22 @@ nfgPositionManger.mint({
 
 ```
 
-- Swap Router \* : Swap router supports swapping of tokens from pool .
+- Swap Router : Swap router supports swapping of tokens from pool .
 
-* exactInputSingle/exactInput
-* exactOutputSingle/exactOutput
+1.  exactInputSingle/exactInput
+2.  exactOutputSingle/exactOutput
+
+exactInput differentiates from exactOutput through the positivity/negativity of the input value.
+
+```
+function swap(
+    address recipient,
+    bool zeroForOne,
+    int256 amountSpecified,
+    uint160 sqrtPriceLimitX96,
+    bytes calldata data
+) external override noDelegateCall returns (int256 amount0, int256 amount1) {
+```
 
 # Deployed Contracts to Rinkeby testnet :-
 
