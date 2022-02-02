@@ -75,7 +75,7 @@ function swap(
 
 UniswapV3Factory - https://rinkeby.etherscan.io/address/0xB9bbeCB84222b0411e49408282BAB329d91E8D67
 
-NFTPositionManager - 0x9b39f2C25CF4aFcF14Ef7E804257A5A22a36AD86
+NFTPositionManager - https://rinkeby.etherscan.io/address/0xf77f5edA1bbdEf2fc60c4C3929762A558402F361
 
 SwapRouter - https://rinkeby.etherscan.io/address/0x541B37C5E79EB5A73498d43d3BE34542A81B8e30
 
